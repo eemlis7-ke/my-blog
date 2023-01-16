@@ -11,7 +11,6 @@ export default function BlogId({ blog }) {
         dangerouslySetInnerHTML={{
           __html: `${blog.body}`,
         }}
-        className={styles.post}
       />
     </main>
   );
