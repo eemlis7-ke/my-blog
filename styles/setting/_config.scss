@@ -1,0 +1,211 @@
+// //ブレイクポイント
+// $breakPointList: 767px, 768px;
+
+// //メディアクエリ
+// $mq: (
+//   'sp': 'screen and (max-width: #{nth($breakPointList, 1)})',
+//   'pc': 'print,screen and (min-width: #{nth($breakPointList, 2)})'
+// ) !default;
+
+
+
+// メディアクエリの基準幅
+$bp-sp: 768px;
+$bp-pc: 769px;
+
+// メディアクエリ
+@mixin pc {
+  @media only screen and (min-width: #{$bp-pc}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: #{$bp-tb}) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media only screen and (max-width: #{$bp-sp}) {
+    @content;
+  }
+}
+
+$mq-pc1000: 1000px;
+$mq-pc1200: 1200px;
+$mq-pc1400: 1400px;
+$mq-pc1500: 1500px;
+$mq-pc1600: 1600px;
+@mixin pc-xxs {
+  @media only screen and (max-width: #{$mq-pc1000}) {
+    @content;
+  }
+}
+@mixin pc-xs {
+  @media only screen and (max-width: #{$mq-pc1200}) {
+    @content;
+  }
+}
+@mixin pc-s {
+  @media only screen and (max-width: #{$mq-pc1400}) {
+    @content;
+  }
+}
+@mixin pc-m {
+  @media only screen and (max-width: #{$mq-pc1500}) {
+    @content;
+  }
+}
+@mixin pc-l {
+  @media only screen and (min-width: #{$mq-pc1600}) {
+    @content;
+  }
+}
+
+
+
+.pc-none {
+  display: inline-block;
+
+  @include pc {
+    display: none;
+  }
+}
+
+.sp-none {
+  display: none;
+
+  @include pc {
+    display: inline-block;
+  }
+}
+
+//画像格納ディレクトリ
+$imgDir: '/assets/images/';
+
+//最小横幅
+$minPcContentWidth: 1200px;
+
+//カラー設定
+$PRIMARY: #2151CC; // 800
+$PRIMARY_PALE: #BFC6FE; // 400
+$PRIMARY_DARK: #002550; // 900
+$SECONDARY: #726F60; // 800
+$SECONDARY_PALE: #a19d8d; // 400
+$SECONDARY_DARK: #474436; // 900
+
+$PRIMARY_500: #BD173B;
+$PRIMARY_BULE_400: #5375E9;
+
+$PRIMARY_BULE_900: #001426;
+$PRIMARY_BULE_800: #002550;
+$PRIMARY_BULE_700: #023279;
+$PRIMARY_BULE_600: #0B3FA3;
+$PRIMARY_BULE_500: #2151CC;
+$PRIMARY_BULE_400: #5375E9;
+$PRIMARY_BULE_300: #8A9CF9;
+$PRIMARY_BULE_200: #BFC6FE;
+$PRIMARY_BULE_100: #F2F3FF;
+$PRIMARY_BULE_050: #F6F7FF;
+
+$BASE_BLACK: #000000;
+$BASE_WHITE: #FFFFFF;
+
+$GRAY_900: #212121;
+$GRAY_800: #424242;
+$GRAY_700: #616161;
+$GRAY_600: #757575;
+$GRAY_500: #9E9E9E;
+$GRAY_400: #BDBDBD;
+$GRAY_300: #E0E0E0;
+$GRAY_200: #EEEEEE;
+$GRAY_100: #F5F5F5;
+$GRAY_050: #FAFAFA;
+
+$TEXT: #001B36;
+$TEXT_PALE: #9E9E9E;
+
+$LINK: #1a0dab; //　google,bing
+$LINK_VISITED: #9E9E9E;
+$LINK_HOVER: #9E9E9E;
+
+$DANGER: #BE0123;
+$DANGER_PALE: #E4ABB6;
+$WARNING: #FFD335;
+$WARNING_PALE: #F8EABB;
+$SUCCESS: #34C759;
+$SUCCESS_PALE: #BBE7C6;
+$INFO: #0084F8;
+$INFO_PALE: #ABD3F5;
+$INFO_PALE_30: #E6F2FC;
+
+$LINE: #D4D4D4; //400
+$LINE_PALE: #FAFAFA; //100
+$LINE_DARK: #D4D4D4; //600
+
+$PLAN_APPLICATION: #BD5080;
+$PLAN_REPORT: #00A76A;
+$PLAN_CONTACT: #1D80F3;
+$PLAN_MANOR: #FE9628;
+
+
+// フォント設定
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+$NotoSans-R: "NotoSansJP-Regular",sans-serif;
+$NotoSans-B: "NotoSansJP-Bold",sans-serif;
+$Ubuntu-R: "Ubuntu-Regular",sans-serif;
+$Ubuntu-B: "Ubuntu-Bold",sans-serif;
+
+$font-site: 'Noto Sans JP', "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+
+$font-jp: 'Noto Sans JP', sans-serif;
+$font-en: 'Ubuntu', sans-serif;
+
+//テキスト設定
+$size-title: 16px;
+$size-title-l: 18px;
+$size-title-s: 14px;
+
+$size-heading-0: 120px;
+$size-heading-1: 80px;
+$size-heading-2: 64px;
+$size-heading-3: 48px;
+$size-heading-4: 32px;
+$size-heading-5: 24px;
+$size-heading-6: 20px;
+
+
+$size-text-xxl: 22px;
+$size-text-xl: 20px;
+$size-text-l: 18px;
+$size-text: 16px;
+$size-text-s: 14px;
+$size-text-xs: 12px;
+$size-text-xxs: 10px;
+
+$size-caption: 12px;
+$size-caption-s: 10px;
+
+
+// シャドウ設定
+$drop-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+$base-shadow: drop-shadow(0px 0px 2px rgba(0,0,0,0.15));
+$base-shadow-layer01: drop-shadow(0px 0px 2px rgba(0,0,0,0.15));
+$base-shadow-layer02: drop-shadow(0px 0px 2px rgba(0,0,0,0.15));
+$base-shadow-layer03: drop-shadow(0px 0px 2px rgba(0,0,0,0.15));
+$base-shadow-layer04: drop-shadow(0px 2px 8px rgba(0,0,0,0.20));
+$base-shadow-layer05: drop-shadow(0px 0px 2px rgba(0,0,0,0.15));
+
+
+// @media (max-width: 1300px) and (max-height: 700px) {
+//   $size-text-xxl: 20px;
+//   $size-text-xl: 18px;
+//   $size-text-l: 16px;
+//   $size-text: 14px;
+//   $size-text-s: 12px;
+//   $size-text-xs: 10px;
+//   $size-text-xxs: 9px;
+// }

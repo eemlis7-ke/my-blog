@@ -1,10 +1,25 @@
 // pages/index.js
 import Link from "next/link";
 import { client } from "../libs/client";
+import { Pagination } from '../components/Pagination';
 
-export default function Home({ blog }) {
+export default function Home({ blog, totalCount, category, tag }) {
   return (
     <div>
+      {/* <ul>
+        {category.map((category) => (
+          <li key={category.id}>
+            <Link href={`/category/${category.id}`}>{category.name}</Link>
+          </li>
+        ))}
+      </ul>
+      <ul>
+        {tag.map((tag) => (
+          <li key={tag.id}>
+            <Link href={`/tag/${tag.id}`}>{tag.name}</Link>
+          </li>
+        ))}
+      </ul> */}
       <ul>
         {blog.map((blog) => (
           <li key={blog.id}>
@@ -12,17 +27,25 @@ export default function Home({ blog }) {
           </li>
         ))}
       </ul>
+      <Pagination totalCount={totalCount} />
     </div>
   );
 }
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "blog" });
+  // const data = await client.get({ endpoint: "blog" });
+  const data = await client.get({ endpoint: "blog", queries: { offset: 0, limit: 5 } });
+  // カテゴリーコンテンツの取得
+  const categoryData = await client.get({ endpoint: "categories" });
+  const tagData = await client.get({ endpoint: "tags" });
 
   return {
     props: {
       blog: data.contents,
+      totalCount: data.totalCount,
+      category: categoryData.contents,
+      tag: tagData.contents,
     },
   };
 };

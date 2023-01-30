@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  // background-color: $GRAY_200;
+  // background-color: $PRIMARY;
+  // padding: 1rem;
+}
+
+body {
+  margin: 0;
+  // min-height: 96vh;
+  // height: 100%;
+  // overflow: hidden;
+  font-family: $font-site;
+  font-size: $size-text;
+  // border: 20px solid $GRAY_200;
+  border-radius: 1rem;
+  background-color: $BASE_WHITE;
+  // filter: $base-shadow;
+}
+
+a {
+  color: $LINK;
+  // text-decoration: none;
+  &:hover{
+    text-decoration: none;
+  }
+}
+ul{
+  list-style: none;
+}
+
+.h0{
+  font-size: $size-heading-0;
+}
+h1{
+  font-size: $size-heading-1;
+}
+h2{
+  font-size: $size-heading-2;
+}
+h3{
+  font-size: $size-heading-3;
+}
+h4{
+  font-size: $size-heading-4;
+}
+h5{
+  font-size: $size-heading-5;
+}
+h6{
+  font-size: $size-heading-6;
+}
+
+.section-wrap{
+  display: flex;
+  min-width: 1280px;
+  &.is-active{
+    width: 76vw;
+  }
+  &.is-modal-open{
+    overflow: hidden;
+  }
+}
+
+.section-box-wrap{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  // padding: 1rem 2rem;
+}
+.section-box-title{
+  font-size: $size-text-l;
+  font-weight: bold;
+  padding-right: 1rem;
+  min-width: 4rem;
+}
+.section-box-icon{
+  display: flex;
+  align-items: center;
+  padding-right: 0.5rem;
+  &.icon--last{
+    padding: 0 0 0 0.5rem;
+  }
+  svg{
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+.App{
+  width: 100%;
+  height: calc(100vh - 90px - 160px);
+  // min-height: 88dvh;
+  min-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
