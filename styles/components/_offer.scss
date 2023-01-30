@@ -1,0 +1,17 @@
+.offer-wrap{
+    width: 100%;
+    padding: 3rem;
+    background-color: #EEE;
+    .offer-wrap-inner{
+        max-width: 1600px;
+        margin: 0 auto;
+        text-align: center;
+        .offer-wrap-link{
+            padding: 2rem 0;
+            a{
+                color: $TERTIARY;
+                text-decoration: underline;
+            }
+        }
+    }
+}

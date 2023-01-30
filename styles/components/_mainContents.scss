@@ -1,0 +1,25 @@
+.main-contetns-wrap{
+    display: flex;
+    max-width: 1600px;
+    margin: 1rem auto;
+    .main-contetns-index{
+        width: 25%;
+        margin-right: 4rem;
+        background-color: #DDD;
+    }
+    .main-contetns-body{
+        width: 70%;
+        // background-color: #EEE;
+        padding: 0 2rem 2rem;
+        padding-left: 1rem;
+        // padding: 1rem 4rem 1rem 0;
+        // border-right: 1px solid $LINE_PALE;
+    }
+    .main-contetns-side{
+        width: 30%;
+        margin-left: 4rem;
+        background-color: #EEE;
+        padding: 2rem;
+        border-radius: 0.5rem;
+    }
+}

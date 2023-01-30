@@ -1,9 +1,9 @@
 // pages/blog/page/[id].js
 import Link from 'next/link';
-import { Pagination } from '../../../components/Pagination';
+import { Pagination } from '../../../component/Pagination';
 import { client } from "../../../libs/client";
 
-const PER_PAGE = 5; 
+const PER_PAGE = 8; 
 
 // pages/blog/[id].js
 export default function BlogPageId({ blog, totalCount }) {

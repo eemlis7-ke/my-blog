@@ -1,11 +1,12 @@
 // pages/index.js
 import Link from "next/link";
 import { client } from "../libs/client";
-import { Pagination } from '../components/Pagination';
+import { Pagination } from '../component/Pagination';
+// import '@/styles/globals.css'
 
 export default function Home({ blog, totalCount, category, tag }) {
   return (
-    <div>
+    <div className="section-wrap">
       {/* <ul>
         {category.map((category) => (
           <li key={category.id}>
@@ -20,14 +21,53 @@ export default function Home({ blog, totalCount, category, tag }) {
           </li>
         ))}
       </ul> */}
-      <ul>
-        {blog.map((blog) => (
-          <li key={blog.id}>
-            <Link href={`/blog/${blog.id}`}>{blog.title}</Link>
-          </li>
-        ))}
-      </ul>
-      <Pagination totalCount={totalCount} />
+      <div className="hero-section-wrap">
+        <div className="hero-wrap">
+          <h1 className="hero-section-title">画面</h1>
+          <h2 className="hero-section-text">UIエレメントとは、UI（ユーザーインターフェース）において、ユーザーが直接操作する要素や情報を表示するためのものを指します。これらのUIエレメントを使用することで、ユーザーはアプリケーションやサイトを操作したり、情報を入力することができるようになります。また、UIエレメントは、アプリケーションやサイトのデザインやインターフェースを構成する重要な要素であるため、その使い勝手やデザインにも注意が払われます。</h2>
+          </div>
+      </div>
+      <div className="tag-section-wrap">
+        <div  className="tag-wrap">
+          <ul>
+            <li className="is-selected">すべて</li>
+            <li>UI</li>
+            <li>UX</li>
+            <li>デザイン</li>
+            <li>AI画像</li>
+            <li>Code</li>
+          </ul>
+        </div>
+      </div>
+      <div className="main-section">
+        <div className="section-wrap-inner">
+          <ul className="blog-card-wrap">
+            {blog.map((blog) => (
+              <li key={blog.id} className="blog-card-box">
+                <div className="blog-card-number">00</div>
+                <div className="blog-card-image"><img src="/blog/001.png" /></div>
+                <div className="blog-card-body">
+                  <div className="post-detail-category"><span>カテゴリー</span><span>8分で読めます</span></div>
+                  <Link href={`/blog/${blog.id}`}><div className="blog-card-title">{blog.title}</div></Link>
+                  <div className="blog-card-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</div>
+                </div>
+                <div className="blog-card-footer">
+                  <div className="post-detail-avator"><img src="/blog/305.png" /></div>
+                  <div className="post-detail-author">UI Type layout</div>
+                  <div className="post-detail-date">2023.01.30</div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="section-wrap-inner">
+          <Pagination totalCount={totalCount} />
+        </div>
+      </div>
+      <div className="goTop-wrap">
+        {/* <Link href={""}>↑</Link> */}
+        <a href="#">↑</a>
+      </div>
     </div>
   );
 }
@@ -35,7 +75,7 @@ export default function Home({ blog, totalCount, category, tag }) {
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
   // const data = await client.get({ endpoint: "blog" });
-  const data = await client.get({ endpoint: "blog", queries: { offset: 0, limit: 5 } });
+  const data = await client.get({ endpoint: "blog", queries: { offset: 0, limit: 8 } });
   // カテゴリーコンテンツの取得
   const categoryData = await client.get({ endpoint: "categories" });
   const tagData = await client.get({ endpoint: "tags" });

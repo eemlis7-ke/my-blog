@@ -1,0 +1,37 @@
+.list__example{
+    padding: 2rem;
+    li{
+        margin: 0 0 2rem;
+        list-style: decimal-leading-zero;
+        padding-left: 1rem;
+    }
+}
+.list__disc{
+    padding: 2rem;
+    li{
+        margin: 0 0 2rem;
+        list-style: disc;
+        padding-left: 1rem;
+    }
+}
+.list__check{
+    padding: 2rem;
+    li{
+        margin: 0 0 2rem;
+        list-style: none;
+        padding-left: 1rem;
+        position: relative;
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: .5em;
+            left: -1em;
+            width: 14px;
+            height: 8px;
+            border-left: 3px solid $TERTIARY;
+            border-bottom: 3px solid $TERTIARY;
+            transform: rotate(-45deg);
+        }
+    }
+}

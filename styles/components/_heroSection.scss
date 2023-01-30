@@ -1,0 +1,15 @@
+.hero-section-wrap{
+    padding: 4rem 6rem;
+    background-color: $GRAY_050;
+    .hero-wrap{
+        max-width: 1560px;
+        margin: 0 auto;
+        .hero-section-title{
+            font-size: 48px;
+        }
+        .hero-section-text{
+            font-size: 18px;
+            line-height: 2;
+        }
+    }
+}

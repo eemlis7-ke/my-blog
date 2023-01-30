@@ -1,0 +1,66 @@
+.breadCrumbs-section-wrap{
+    padding: 1.5rem 4rem;
+    // border-bottom:1px solid $LINE;
+    // border-top:1px solid $LINE;
+    .breadCrumbs-wrap{
+        max-width: 1560px;
+        margin: 0 auto;
+        ul{
+            display: flex;
+            align-items: center;
+            li{
+                margin-left: 1.25rem;
+                padding: 0.5rem 1rem;
+                font-size: $size-text;
+                border-radius: 0.5rem;
+                cursor: pointer;
+                transition: .5s;
+                position: relative;
+                &:after{
+                    content: ">";
+                    position: absolute;
+                    left: -1rem;
+                    color: $TEXT_SUB02;
+                }
+                &:hover{
+                    transition-duration: .3s;
+                    transform: scale(0.9);
+                    background-color: $TERTIARY;
+                    &:after{
+                        content: "<";
+                        transform: scale(1);
+                        font-weight: bold;
+                        color: $BASE_BLACK;
+                    }
+                }
+
+                &:first-child{
+                    margin-left: 0;
+                    &:after{
+                        display: none;
+                    }
+                    &:hover{
+                        &:after{
+                            display: inline-block;
+                            content: "<";
+                        }
+                    }
+                }
+                &:last-child{
+                    // margin-left: 0;
+                    background-color: $GRAY_100;
+                    &:hover{
+                        transform: scale(0.98);
+                        &:after{
+                            content: ">";
+                        }
+                    }
+                }
+                &.is-selected{
+                    // background-color: $PRIMARY;
+                    // color: $BASE_WHITE;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,84 @@
+
+
+.blog-card-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    .blog-card-box{
+        width: 23%;
+        min-height: 120px;
+        margin: 1% 1%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        // justify-content: center;
+        padding: .5rem;
+        border: 1px solid $LINE_PALE;
+        background-color: $BASE_WHITE;
+        text-align: left;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        position: relative;
+        transition: .5s;
+        &:hover{
+            // transform: scale(1.05);
+            border: 1px solid $LINE;
+            filter: $base-shadow;
+            transition-duration: .3s;
+            // transition: 0.3s;
+            // transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+            // box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2);
+            transform: scale(0.9);
+        }
+        // &:first-child{
+        //     border: 1px solid $LINE;
+        // }
+        a{
+            text-decoration: none;
+        }
+        .blog-card-number{
+            font-size: 64px;
+            line-height: 1;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: $BASE_WHITE;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+        }
+        .blog-card-image{
+            width: 100%;
+            // margin-bottom: 1rem;
+            img{
+                width: 100%;
+                height: auto;
+                display: block;
+                border-radius: 0.5rem;
+            }
+        }
+        .blog-card-body{
+            padding: 1rem;
+            .blog-card-title{
+                width: 100%;
+                font-size: $size-text-l;
+                font-weight: 600;;
+                margin-bottom: 0.5rem;
+            }
+            .blog-card-text{
+                width: 100%;
+                font-size: $size-text-s;
+                color: $GRAY_700;
+                margin-bottom: 1rem;
+            }
+        }
+        .blog-card-footer{
+            width: 100%;
+            border-top: 1px solid $GRAY_200;
+            padding: 0.5rem 0.5rem 0.25rem;
+            display: flex;
+            align-items: center;
+            font-size: $size-text-s;
+            color: $GRAY_700;
+        }
+    }
+}

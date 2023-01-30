@@ -20,12 +20,14 @@ body {
   // border: 20px solid $GRAY_200;
   border-radius: 1rem;
   background-color: $BASE_WHITE;
+  line-height: 1.5;
   // filter: $base-shadow;
 }
 
 a {
-  color: $LINK;
-  // text-decoration: none;
+  // color: $LINK;
+  color: $BASE_BLACK;
+  text-decoration: none;
   &:hover{
     text-decoration: none;
   }
@@ -56,8 +58,21 @@ h6{
   font-size: $size-heading-6;
 }
 
+.goTop-wrap{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-size: 48px;
+  padding: 0 .75rem;
+  background-color: $BASE_WHITE;
+  border: 1px solid $LINE_PALE;
+  border-radius: 25px 0 0 0;
+}
+
 .section-wrap{
-  display: flex;
+  // display: flex;
+  // flex-wrap: wrap;
+  width: 100%;
   min-width: 1280px;
   &.is-active{
     width: 76vw;
@@ -66,6 +81,14 @@ h6{
     overflow: hidden;
   }
 }
+
+.section-wrap-inner{
+  display: block;
+  width: 100%;
+  max-width: 1600px;
+  margin: 1rem auto;
+}
+
 
 .section-box-wrap{
   width: 100%;
@@ -95,9 +118,13 @@ h6{
 
 .App{
   width: 100%;
-  height: calc(100vh - 90px - 160px);
+  // height: calc(100vh - 90px - 160px);
   // min-height: 88dvh;
   min-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
+}
+
+.main-section{
+  padding: 4rem;
 }
