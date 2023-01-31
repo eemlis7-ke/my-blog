@@ -1,7 +1,7 @@
 // pages/index.js
 import Link from "next/link";
-import { client } from "../libs/client";
-import { Pagination } from '../component/Pagination';
+import { client } from "../../libs/client";
+import { Pagination } from '../../component/Pagination';
 // import '@/styles/globals.css'
 
 export default function Home({ blog, totalCount, category, tag }) {
@@ -23,8 +23,8 @@ export default function Home({ blog, totalCount, category, tag }) {
       </ul> */}
       <div className="hero-section-wrap">
         <div className="hero-wrap">
-          <h1 className="hero-section-title">画面</h1>
-          <h2 className="hero-section-text">UIエレメントとは、UI（ユーザーインターフェース）において、ユーザーが直接操作する要素や情報を表示するためのものを指します。これらのUIエレメントを使用することで、ユーザーはアプリケーションやサイトを操作したり、情報を入力することができるようになります。また、UIエレメントは、アプリケーションやサイトのデザインやインターフェースを構成する重要な要素であるため、その使い勝手やデザインにも注意が払われます。</h2>
+          <h1 className="hero-section-title">ブログ</h1>
+          <h2 className="hero-section-text">UI/UX、デザイン、AI画像など、UIXHEROが日頃検索して調べたことなどを中心に情報を発信します。</h2>
           </div>
       </div>
       <div className="tag-section-wrap">
@@ -44,18 +44,20 @@ export default function Home({ blog, totalCount, category, tag }) {
           <ul className="blog-card-wrap">
             {blog.map((blog) => (
               <li key={blog.id} className="blog-card-box">
-                <div className="blog-card-number">00</div>
-                <div className="blog-card-image"><img src="/blog/001.png" /></div>
-                <div className="blog-card-body">
-                  <div className="post-detail-category"><span>カテゴリー</span><span>8分で読めます</span></div>
-                  <Link href={`/blog/${blog.id}`}><div className="blog-card-title">{blog.title}</div></Link>
-                  <div className="blog-card-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</div>
-                </div>
-                <div className="blog-card-footer">
-                  <div className="post-detail-avator"><img src="/blog/305.png" /></div>
-                  <div className="post-detail-author">UI Type layout</div>
-                  <div className="post-detail-date">2023.01.30</div>
-                </div>
+                <Link href={`/blog/${blog.id}`}>
+                  <div className="blog-card-number">00</div>
+                  <div className="blog-card-image"><img src="/blog/001.png" /></div>
+                  <div className="blog-card-body">
+                    <div className="post-detail-category"><span>カテゴリー</span><span>8分で読めます</span></div>
+                    <div className="blog-card-title">{blog.title}</div>
+                    <div className="blog-card-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</div>
+                  </div>
+                  <div className="blog-card-footer">
+                    <div className="post-detail-avator"><img src="/blog/305.png" /></div>
+                    <div className="post-detail-author">UI Type layout</div>
+                    <div className="post-detail-date">2023.01.30</div>
+                  </div>
+                </Link>
               </li>
             ))}
           </ul>

@@ -1,16 +1,39 @@
 footer{
     .footer-wrap{
         width: 100%;
-        height: 160px;
-        padding: 2rem;
-        background-color: $GRAY_400;
+        // height: 160px;
+        padding: 4rem 1rem 0;
+        // background-color: $GRAY_400;
         display: flex;
         align-items:center;
+        border-top: 1px solid $GRAY_200;
+        position: relative;
+        z-index: 10;
+        .footer-logo{
+            font-size: $size-text-l;
+            img{
+                max-width: 160px;
+            }
+        }
     }
     .copyright-wrap{
         width: 100%;
-        text-align: right;
+        // text-align: right;
         padding: 1rem;
         font-size: $size-text-s;
     }
+    .goTop-wrap{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        font-size: 48px;
+        padding: 0 .75rem;
+        background-color: $BASE_WHITE;
+        border: 1px solid $LINE_PALE;
+        border-radius: 25px 0 0 0;
+        z-index: 1;
+        &:hover{
+            opacity: 0.7;
+        }
+      }
 }

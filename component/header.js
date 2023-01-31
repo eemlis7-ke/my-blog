@@ -1,18 +1,41 @@
-// pages/index.js
 import Link from "next/link";
-import { client } from "../libs/client";
 
 export default function Header() {
   return (
     <header>
-        <h1><Link href="/"><img src="/HeaderWrap/logo.svg" /></Link></h1>
+        <div className="header-logo"><Link href="/"><img src="/HeaderWrap/logo.svg" /></Link></div>
         <nav>
-            <ul>
-                <li><Link href="/">Appカテゴリ</Link></li>
-                <li><Link href="/category">ユーザーフロー</Link></li>
-                <li><Link href="/tag">コンポーネント</Link></li>
-                <li><Link href="/tag">画面</Link></li>
-                <li><Link href="/tag">記事一覧</Link></li>
+            <ul className="global-nav">
+            <li className="global-nav-list">
+                  <Link href="/category">
+                    <div className="global-nav-titile">Appカテゴリ</div>
+                    <div className="global-nav-subTitile">App Category</div>
+                  </Link>
+                </li>
+                <li className="global-nav-list">
+                  <Link href="/userflow">
+                    <div className="global-nav-titile">ユーザーフロー</div>
+                    <div className="global-nav-subTitile">User Flow</div>
+                  </Link>
+                </li>
+                <li className="global-nav-list">
+                  <Link href="/components">
+                    <div className="global-nav-titile">コンポーネント</div>
+                    <div className="global-nav-subTitile">Components</div>
+                  </Link>
+                </li>
+                <li className="global-nav-list">
+                  <Link href="/screen">
+                    <div className="global-nav-titile">画面</div>
+                    <div className="global-nav-subTitile">Screen</div>
+                  </Link>
+                </li>
+                <li className="global-nav-list is-active">
+                  <Link href="/blog">
+                    <div className="global-nav-titile">ブログ</div>
+                    <div className="global-nav-subTitile">Blog</div>
+                  </Link>
+                </li>
             </ul>
         </nav>
     </header>

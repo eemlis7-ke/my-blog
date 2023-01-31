@@ -3,11 +3,15 @@
     padding: 3rem;
     background-color: #EEE;
     .offer-wrap-inner{
-        max-width: 1600px;
+        max-width: 520px;
         margin: 0 auto;
         text-align: center;
+        .offer-wrap-title{
+            font-size: $size-text-xxl;
+            padding: 2rem;
+        }
         .offer-wrap-link{
-            padding: 2rem 0;
+            padding: 2rem;
             a{
                 color: $TERTIARY;
                 text-decoration: underline;

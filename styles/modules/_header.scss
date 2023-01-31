@@ -8,19 +8,33 @@ header{
     display: flex;
     align-items:center;
     justify-content: space-between;
-    h1{
+    .header-logo{
         font-size: $size-text-l;
         img{
             max-width: 180px;
         }
     }
     nav{
-        ul{
+        .global-nav{
             display: flex;
-            li{
+            .global-nav-list{
                 margin-right: 1rem;
+                text-align: center;
+                padding: 0.5rem 2rem;
                 :last-child{
                     margin-right: 0;
+                }
+                .global-nav-titile{
+                    font-size: $size-text;
+                }
+                .global-nav-subTitile{
+                    font-size: $size-text-xxs;
+                }
+                &.is-active{
+                    a{
+                        color: $SECONDARY;
+                        font-weight: bold;
+                    }
                 }
             }
         }
