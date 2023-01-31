@@ -32,7 +32,7 @@ export default function Header() {
                 </li>
                 <li className="global-nav-list is-active">
                   <Link href="/blog">
-                    <div className="global-nav-titile">ブログ</div>
+                    <div className="global-nav-titile">ブログ一覧</div>
                     <div className="global-nav-subTitile">Blog</div>
                   </Link>
                 </li>
